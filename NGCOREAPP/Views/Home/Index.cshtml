@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="row" ng-app="APP" ng-controller="Home">
+
+    <div class="col-md-12">
+
+        <div class="col-md-11">
+            <div class="form-group">
+                <label>Uzun Linki Giriniz:</label>
+                <input class="form-control" ng-model="_link.LongUrl" />
+            </div>
+        </div>
+
+        <div class="col-md-1">
+            <button class="btn btn-primary" ng-click="GenerateShort()">Kısalt</button>
+        </div>
+
+        <div class="col-md-12">
+            <strong>Kısa Linkiniz: {{ShortLink}}</strong>
+        </div>
+
+    </div>
+
+
+
+</div>
+
+@section Scripts{
+    <script src="~/js/Home.js"></script>
+}
