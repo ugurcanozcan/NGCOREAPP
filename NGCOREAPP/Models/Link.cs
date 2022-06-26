@@ -4,5 +4,6 @@
     {
         public string LongUrl { get; set; } = "";
         public string ShortUrl { get; set; } = "";
+        public int ClickCount { get; set; } = 0;
     }
 }

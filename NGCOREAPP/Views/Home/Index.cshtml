@@ -23,8 +23,33 @@
 
     </div>
 
+    <div class="col-md-12">
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>Uzun Link</td>
+                    <td>Kısa Link</td>
+                    <td>Tıklanma Sayısı</td>
+                    <td></td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="link in LinkList">
+
+                    <td>{{link.longUrl}}</td>
+                    <td id="kopyala{{link.shortUrl}}">https://localhost:7177/D/I?I={{link.shortUrl}}</td>
+                    <td>{{link.clickCount}}</td>
+                    <td><a class="btn-sm btn-success" ng-click="PreCopy(link.shortUrl)">Kopyala</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
 
+
+    <div ng-show="Copied!=''" id="msg" style="background-color: #00000059;width:auto;padding:15px;position: absolute;bottom: 65px;right: 42%; text-align:center">
+        Kopyalandı : {{Copied}}
+    </div>
 </div>
 
 @section Scripts{
