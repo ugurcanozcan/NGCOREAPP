@@ -1,7 +1,8 @@
 ﻿var app = angular.module("APP", []);
 app.controller("Home", function ($scope, $http) {
 
-    $scope.Copied = "";
+    $scope.Copied = ""; 
+    
 
     $scope.GenerateShort = function () {
 
@@ -50,6 +51,20 @@ app.controller("Home", function ($scope, $http) {
 
     }
 
+    $scope.AddCredit = function (link) {
+        
+        $scope.currentLink = link;
+        
+        $http({
+            method: "POST",
+            headers: { "Content-Type": "Application/json; charset=utf-8" },
+            url: "/Home/AddCredit",
+            data: $scope.currentLink,
+        }).then(function (result) {
+
+            
+        });
+    }
    
 
    

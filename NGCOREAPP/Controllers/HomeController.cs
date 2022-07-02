@@ -26,6 +26,7 @@ namespace NGCOREAPP.Controllers
             }
 
 
+
             Links.LinkList.Add(_link);
 
 
@@ -37,6 +38,14 @@ namespace NGCOREAPP.Controllers
         public List<Link> GetLinkList()
         {
             return Links.LinkList;
+        }
+
+        [HttpPost]
+        public string AddCredit([FromBody] Link _link)
+        {
+            Link link = Links.LinkList.Where(x => x.ShortUrl == _link.ShortUrl).First();
+            link.ClickLimit += 5;
+            return "Limitiniz arttırılmıştır.";
         }
 
     }

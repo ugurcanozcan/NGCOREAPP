@@ -39,7 +39,10 @@
                     <td>{{link.longUrl}}</td>
                     <td id="kopyala{{link.shortUrl}}">https://localhost:7177/D/I?I={{link.shortUrl}}</td>
                     <td>{{link.clickCount}}</td>
-                    <td><a class="btn-sm btn-success" ng-click="PreCopy(link.shortUrl)">Kopyala</a></td>
+                    <td>
+                        <a ng-show="link.clickCount >= link.clickLimit" ng-click="AddCredit(link)"  class="btn-sm btn-warning">Ek Kredi</a>
+                        <a class="btn-sm btn-success" ng-click="PreCopy(link.shortUrl)">Kopyala</a>
+                    </td>
                 </tr>
             </tbody>
         </table>
